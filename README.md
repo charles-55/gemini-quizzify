@@ -8,11 +8,13 @@ The project's goal is to demo the use of large language models (LLMs) in a custo
 ## Key Features
 The key features of the Gemini Explorer project are listed below:
 
-- An interactive AI chat system, Horatio, that uses Streamlit and Google's Gemini AI.
+- An interactive AI chat system called Horatio that uses Streamlit to enable user-friendly interactions.
 
-- A personalized AI, designed to sound like William Shakespeare and to be more friendly by interacting using the user's provided name.
+- Horatio uses Google's Gemini AI, a strong and powerful LLM.
 
-- Horatio is able to respond to a variety of basic and complex questions.
+- Horatio was designed to sound like William Shakespeare and to be more friendly by interacting with the user's provided name.
+
+- The Gemini Explorer project was designed to allow easy scaling and customization.
 
 ## Set Up
 To set up the Gemini Explorer project, follow these steps:
