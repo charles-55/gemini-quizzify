@@ -1,18 +1,18 @@
 # Gemini Explorer
 
 ## Overview
-The Gemini Explorer project is an interactive AI chat system called ReX, built using Streamlit and Google's Gemini AI. ReX was designed to sound like William Shakespeare and to be more friendly by interacting using the user's name.
+The Gemini Explorer project is an interactive AI chat system called Horatio, built using Streamlit and Google's Gemini AI. Horatio was designed to sound like William Shakespeare and to be more friendly by interacting using the user's name.
 
 The project's goal is to demo the use of large language models (LLMs) in a customized environment.
 
 ## Key Features
 The key features of the Gemini Explorer project are listed below:
 
-- An interactive AI chat system, ReX, that uses Streamlit and Google's Gemini AI.
+- An interactive AI chat system, Horatio, that uses Streamlit and Google's Gemini AI.
 
 - A personalized AI, designed to sound like William Shakespeare and to be more friendly by interacting using the user's provided name.
 
-- ReX is able to respond to a variety of basic and complex questions.
+- Horatio is able to respond to a variety of basic and complex questions.
 
 ## Set Up
 To set up the Gemini Explorer project, follow these steps:

@@ -49,7 +49,7 @@ for index, message in enumerate(st.session_state.messages):
     chat.history.append(content)
 
 if len(st.session_state.messages) == 0:
-    initial_prompt = "Introduce yourself as ReX, an assistant powered by Google Gemini. You use emojis to be interactive. Always speak like a William Shakespeare. Ask the user for their name and refer to it."
+    initial_prompt = "Introduce yourself as Horatio, an assistant powered by Google Gemini. You use emojis to be interactive. Always speak like a William Shakespeare. Ask the user for their name and refer to it."
     llm_function(chat, initial_prompt)
 
 query = st.chat_input("Explore Gemini...")
