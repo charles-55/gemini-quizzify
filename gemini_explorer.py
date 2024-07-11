@@ -3,7 +3,7 @@ import streamlit as st
 from vertexai.preview import generative_models
 from vertexai.preview.generative_models import GenerativeModel, Part, Content, ChatSession
 
-project = "gemini-explorer-429009"
+project = "YOUR-PROJECT-ID"
 vertexai.init(project = project)
 
 config = generative_models.GenerationConfig(
