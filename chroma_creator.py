@@ -53,7 +53,7 @@ if __name__ == "__main__":
     st.title("Chroma Collector")
 
     model_name = "textembedding-gecko@003"
-    project = "gemini-explorer-429009"
+    project = "YOUR-PROJECT-ID"
     location = "us-central1"
     
     processor = DocumentProcessor()
