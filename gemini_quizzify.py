@@ -5,16 +5,24 @@ from vertexai.preview.generative_models import GenerativeModel, Part, Content, C
 from langchain_community.document_loaders import PyPDFLoader
 import os
 
-project = "YOUR-PROJECT-ID"
-vertexai.init(project = project)
-uploaded_pages = []
-config = generative_models.GenerationConfig(
-    temperature=0.4
-)
-model = GenerativeModel(
-    "gemini-pro",
-    generation_config=config
-)
+class DocumentProcessor:
+    def __init__(self):
+        self.documents = []
+    
+    def ingest_documents(self):
+        uploaded_files = st.file_uploader("Upload a PDF file", type="pdf", accept_multiple_files=True)
+
+        if uploaded_files is not None:
+            for uploaded_file in uploaded_files:
+                temp_file_path = uploaded_file.name
+
+                with open(temp_file_path, "wb") as f:
+                    f.write(uploaded_file.getvalue())
+                    self.documents = PyPDFLoader(temp_file_path).load()
+                
+                os.unlink(temp_file_path)
+            
+            st.write(f"Total pages processed: {len(self.documents)}")
 
 def llm_function(chat, query):
     response = chat.send_message(query)
@@ -32,26 +40,17 @@ def llm_function(chat, query):
         "content": output
     })
 
-def ingest_documents():
-    uploaded_files = st.file_uploader("Upload a PDF file", type="pdf", accept_multiple_files=True)
-
-    if uploaded_files is not None:
-        for uploaded_file in uploaded_files:
-            temp_file_path = uploaded_file.name
-
-            with open(temp_file_path, "wb") as f:
-                f.write(uploaded_file.getvalue())
-                pdf = PyPDFLoader(temp_file_path).load()
-
-                for page in pdf:
-                    uploaded_pages.append(page)
-            
-            os.unlink(temp_file_path)
-        
-        st.write(f"Total pages processed: {len(uploaded_pages)}")
-
-
 if __name__ == "__main__":
+    project = "YOUR-PROJECT-ID"
+    vertexai.init(project = project)
+
+    config = generative_models.GenerationConfig(
+        temperature=0.4
+    )
+    model = GenerativeModel(
+        "gemini-pro",
+        generation_config=config
+    )
     chat = model.start_chat()
     st.title("Gemini Quizzify")
 
@@ -81,4 +80,5 @@ if __name__ == "__main__":
             st.markdown(query)
         llm_function(chat, query)
 
-    ingest_documents()
+    processor = DocumentProcessor()
+    processor.ingest_documents()

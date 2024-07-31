@@ -17,8 +17,6 @@ class EmbeddingClient:
 
 if __name__ == "__main__":
     st.title("Embedding Client")
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
 
     model_name = "textembedding-gecko@003"
     project = "YOUR-PROJECT-ID"
