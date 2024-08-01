@@ -8,7 +8,7 @@ if __name__ == "__main__":
     st.title("Quizzify")
 
     model_name = "textembedding-gecko@003"
-    project = "gemini-quizify-430217"
+    project = "YOUR-PROJECT-ID"
     location = "us-central1"
     
     processor = DocumentProcessor()
