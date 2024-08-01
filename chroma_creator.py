@@ -3,7 +3,7 @@ from langchain_core.documents import Document
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 
-from gemini_quizzify import DocumentProcessor
+from document_processor import DocumentProcessor
 from embedding_client import EmbeddingClient
 
 class ChromaCollectionCreator:
