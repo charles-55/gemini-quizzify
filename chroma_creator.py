@@ -1,4 +1,3 @@
-import os
 import streamlit as st
 from langchain_core.documents import Document
 from langchain_text_splitters import CharacterTextSplitter
